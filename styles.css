@@ -1,0 +1,79 @@
+body {
+    background-color:#91BAD6;
+}
+
+
+
+
+.container {
+    display: flex;
+    
+    justify-content: center;
+}
+
+.grid-item {
+    border:1px solid rgba(0, 0, 0, 0.8);
+    height: 100px;
+    width: 101px;
+    margin: none;
+}
+
+.button-grid {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    background-color: rgb(80, 79, 80);
+    padding: 30px;
+    
+    
+    border-radius: 15px;
+
+}
+button {
+    color: white;
+    border: 0;
+    box-shadow: none;
+    font-size: 25px;
+    
+    
+
+}
+
+
+
+.button-grid .zero-button {
+    grid-area: 6 / span 2;
+    width: 202px;
+    
+}
+.zero-button, .one-button, .two-button, .three-button, .four-button, .five-button, 
+.six-button, .seven-button, .eight-button, .nine-button, .decimal-button{
+    background-color: rgb(123, 122, 123);
+}
+
+.all-clear-button, .sign-flip-button, .modulo-button {
+    background-color: rgb(97, 96, 97);
+}
+.add-button, .subtract-button, .multiply-button, .divide-button, .equals-button {
+    background-color: rgb(242, 163, 60);
+}
+
+.display {
+    grid-area: 1 / span 4;
+}
+
+#number-display {
+    width: 400px;
+    height: 100px;
+    text-align: right;
+    font-size: 75px;
+    background-color: rgb(80, 79, 80);
+    color: white;
+    border: none;
+    margin-bottom: 10px;
+    
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+button:hover {
+    background-color: lightgray;
+}
