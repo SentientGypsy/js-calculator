@@ -20,6 +20,7 @@ const subtract_button = document.getElementById("subtract-button");
 const multiply_button = document.getElementById("multiply-button");
 const divide_button = document.getElementById("divide-button");
 const equals_button = document.getElementById("equals-button");
+const decimal_button = document.getElementById("decimal-button");
 
 let plusButtonState = false;
 let subtractButtonState = false;
@@ -42,6 +43,23 @@ equals_button.addEventListener("click", () => {
     multiply_button.style.border = "1px, solid, rgb(0,0,0,0.8)";
     divide_button.style.border = "1px, solid, rgb(0,0,0,0.8)";
 });
+
+decimal_button.addEventListener("click", () => {
+    if (display_field.value !== null) {
+        if (display_field.value.includes(".")){
+            decimal_button.disabled = true;
+        } else {
+            decimal_button.disabled = false;
+            display_field.value = display_field.value + ".";
+        }
+        
+    }
+
+});
+
+
+
+
 
 
 plus_button.addEventListener("click", () => {
@@ -293,6 +311,11 @@ function divide (numOne, numTwo){
 
 
 function operate(operator, numOne, numTwo) {
+    if (operator === 0 || numTwo === null){
+        return numOne * 1;
+    }
+
+
     switch (operator) {
         case "+":
             return add(numOne, numTwo);
