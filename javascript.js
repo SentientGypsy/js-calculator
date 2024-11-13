@@ -32,11 +32,34 @@ let arrayOfButtonStates = [plusButtonState, subtractButtonState, multiplyButtonS
 let arrayOfButtons = [plus_button, subtract_button, multiply_button, divide_button, equals_button];
 
 
+
+
+sign_flip_button.addEventListener("click", () => {
+    if(operator === 0) {
+        operandOne = operandOne * -1;
+        display_field.value = operandOne;
+        console.log("operand one is -> " + operandOne);
+    } else if (operator !== 0) {
+        operandTwo = operandTwo * -1;
+        display_field.value = operandTwo;
+        console.log("operand two is -> " + operandTwo);
+    }
+});
+
+
+
+
+
 all_clear_button.addEventListener("click", () => {
     display_field.value = "";
     operandOne = 0;
     operandTwo = 0;
     operator = 0;
+
+    plusButtonState = false;
+    subtractButtonState = false;
+    multiplyButtonState = false;
+    divideButtonState = false;
 
 
 });
@@ -51,11 +74,19 @@ equals_button.addEventListener("click", () => {
     let result = operate(operator, operandOne, operandTwo);
     display_field.value = result;
     operandOne = result;
+    console.log("operand one is now from the result ->>" + operandOne);
 
-    plus_button.style.border = "1px, solid, rgb(0,0,0,0.8)";
-    subtract_button.style.border = "1px, solid, rgb(0,0,0,0.8)";
-    multiply_button.style.border = "1px, solid, rgb(0,0,0,0.8)";
-    divide_button.style.border = "1px, solid, rgb(0,0,0,0.8)";
+    plus_button.style.border = "0.5px, solid, rgb(0,0,0,0.8)";
+    subtract_button.style.border = "0.5px, solid, rgb(0,0,0,0.8)";
+    multiply_button.style.border = "0.5px, solid, rgb(0,0,0,0.8)";
+    divide_button.style.border = "0.5px, solid, rgb(0,0,0,0.8)";
+
+    plusButtonState = false;
+    subtractButtonState = false;
+    multiplyButtonState = false;
+    divideButtonState = false;
+    operator = 0;
+
 });
 
 decimal_button.addEventListener("click", () => {
@@ -87,13 +118,13 @@ plus_button.addEventListener("click", () => {
         multiplyButtonState = false;
         divideButtonState = false;
 
-        subtract_button.style.border = "1px, solid, rgb(0,0,0,0.8)";
-        multiply_button.style.border = "1px, solid, rgb(0,0,0,0.8)";
-        divide_button.style.border = "1px, solid, rgb(0,0,0,0.8)";
+        subtract_button.style.border = "0.5px, solid, rgb(0,0,0,0.8)";
+        multiply_button.style.border = "0.5px, solid, rgb(0,0,0,0.8)";
+        divide_button.style.border = "0.5px, solid, rgb(0,0,0,0.8)";
 
     } else {
         plusButtonState = false;
-        plus_button.style.border = "1px, solid, rgb(0,0,0,0.8)";
+        plus_button.style.border = "0.5px, solid, rgb(0,0,0,0.8)";
     }
 
 
@@ -109,14 +140,14 @@ subtract_button.addEventListener("click", () => {
         multiplyButtonState = false;
         divideButtonState = false;
 
-        plus_button.style.border = "1px, solid, rgb(0,0,0,0.8)";
-        multiply_button.style.border = "1px, solid, rgb(0,0,0,0.8)";
-        divide_button.style.border = "1px, solid, rgb(0,0,0,0.8)";
+        plus_button.style.border = "0.5px, solid, rgb(0,0,0,0.8)";
+        multiply_button.style.border = "0.5px, solid, rgb(0,0,0,0.8)";
+        divide_button.style.border = "0.5px, solid, rgb(0,0,0,0.8)";
 
 
     } else {
         subtractButtonState = false;
-        subtract_button.style.border = "1px, solid, rgb(0,0,0,0.8)";
+        subtract_button.style.border = "0.5px, solid, rgb(0,0,0,0.8)";
     }
 
 
@@ -133,14 +164,14 @@ multiply_button.addEventListener("click", () => {
         subtractButtonState = false;
         divideButtonState = false;
 
-        plus_button.style.border = "1px, solid, rgb(0,0,0,0.8)";
-        subtract_button.style.border = "1px, solid, rgb(0,0,0,0.8)";
-        divide_button.style.border = "1px, solid, rgb(0,0,0,0.8)";
+        plus_button.style.border = "0.5px, solid, rgb(0,0,0,0.8)";
+        subtract_button.style.border = "0.5px, solid, rgb(0,0,0,0.8)";
+        divide_button.style.border = "0.5px, solid, rgb(0,0,0,0.8)";
 
 
     } else {
         multiplyButtonState = false;
-        multiply_button.style.border = "1px, solid, rgb(0,0,0,0.8)";
+        multiply_button.style.border = "0.5px, solid, rgb(0,0,0,0.8)";
     }
 
 
@@ -157,14 +188,14 @@ divide_button.addEventListener("click", () => {
         subtractButtonState = false;
         multiplyButtonState = false;
 
-        plus_button.style.border = "1px, solid, rgb(0,0,0,0.8)";
-        subtract_button.style.border = "1px, solid, rgb(0,0,0,0.8)";
-        multiply_button.style.border = "1px, solid, rgb(0,0,0,0.8)";
+        plus_button.style.border = "0.5px, solid, rgb(0,0,0,0.8)";
+        subtract_button.style.border = "0.5px, solid, rgb(0,0,0,0.8)";
+        multiply_button.style.border = "0.5px, solid, rgb(0,0,0,0.8)";
 
 
     } else {
         divideButtonState = false;
-        divide_button.style.border = "1px, solid, rgb(0,0,0,0.8)";
+        divide_button.style.border = "0.5px, solid, rgb(0,0,0,0.8)";
     }
 
 
