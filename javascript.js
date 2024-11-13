@@ -21,6 +21,8 @@ const multiply_button = document.getElementById("multiply-button");
 const divide_button = document.getElementById("divide-button");
 const equals_button = document.getElementById("equals-button");
 const decimal_button = document.getElementById("decimal-button");
+const all_clear_button = document.getElementById("all-clear-button");
+const sign_flip_button = document.getElementById("sign-flip-button");
 
 let plusButtonState = false;
 let subtractButtonState = false;
@@ -28,6 +30,18 @@ let multiplyButtonState = false;
 let divideButtonState = false;
 let arrayOfButtonStates = [plusButtonState, subtractButtonState, multiplyButtonState, divideButtonState];
 let arrayOfButtons = [plus_button, subtract_button, multiply_button, divide_button, equals_button];
+
+
+all_clear_button.addEventListener("click", () => {
+    display_field.value = "";
+    operandOne = 0;
+    operandTwo = 0;
+    operator = 0;
+
+
+});
+
+
 
 
 
